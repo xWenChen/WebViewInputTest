@@ -123,7 +123,8 @@ class WebInputConnection(
         lastComposingTextLength = 0
     }
 
-    override fun deleteSurroundingText(beforeLength: Int, afterLength: Int): Boolean {
+    // TODO 这两个流程，是网上常见的流程
+    /*override fun deleteSurroundingText(beforeLength: Int, afterLength: Int): Boolean {
         Log.d(TAG, "deleteSurroundingText, beforeLength=$beforeLength, afterLength=$afterLength")
         val result = super.deleteSurroundingText(beforeLength, afterLength)
         val intercepted = keyBackIntercepted()
@@ -132,9 +133,10 @@ class WebInputConnection(
         } else {
             result
         }
-    }
+    }*/
 
-    override fun sendKeyEvent(event: KeyEvent?): Boolean {
+    // TODO 这两个流程，是网上常见的流程
+    /*override fun sendKeyEvent(event: KeyEvent?): Boolean {
         Log.d(TAG, "sendKeyEvent, { action = ${actionToString(event?.action)}, " +
             "keyCode = ${KeyEvent.keyCodeToString(event?.keyCode ?: 0)}}")
         val result = super.sendKeyEvent(event)
@@ -145,7 +147,7 @@ class WebInputConnection(
             return true
         }
         return result
-    }
+    }*/
 
     // 触发删除键回调
     private fun keyBackIntercepted(): Boolean {
